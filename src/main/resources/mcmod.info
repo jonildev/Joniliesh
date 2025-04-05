@@ -1,0 +1,13 @@
+[{
+    "modid": "clientbase",
+    "name": "ClientBase",
+    "description": "Simple kotlin base with mixins",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Gabagool", "OctoSplash01"],
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+}]
