@@ -1,4 +1,4 @@
-package com.example.commands
+package me.jonildev.client.commands
 
 import me.jonildev.client.errors.CommandError
 import net.minecraft.command.CommandBase

@@ -2,26 +2,27 @@ package me.jonildev.client.features
 
 import me.jonildev.client.config.Config
 import me.jonildev.client.utils.ChatUtils
-import me.jonildev.client.utils.constants.mc
+import me.jonildev.client.utils.Constants.mc
+import net.minecraft.entity.Entity
 import net.minecraftforge.client.event.RenderWorldLastEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 
 class EntityFinder {
 
+    companion object {
+        var entities: List<Entity> = listOf()
+            private set
+    }
+
     @SubscribeEvent
     fun onRender(event: RenderWorldLastEvent) {
         if (!Config.entityFinder) return
 
-        val entities = mc.theWorld.loadedEntityList
-            .find { entity ->
-                entity.isEntityAlive && entity.name.equals("Forger")
-            }
+        entities = mc.theWorld.loadedEntityList
+            .filter { it.isEntityAlive }
 
-        entities?.let {
-            val forgercoords = ("${it.posX.toInt()} ${it.posY.toInt()} ${it.posZ.toInt()}")
-            ChatUtils.messageToChat(" ${it.name}, (${it.posX.toInt()}, ${it.posY.toInt()}, ${it.posZ.toInt()})")
-            ChatUtils.messageToChat(forgercoords)
-
+        entities.forEach {
+            ChatUtils.message(" ${it.name}, (${it.posX.toInt()}, ${it.posY.toInt()}, ${it.posZ.toInt()})")
         }
     }
 }

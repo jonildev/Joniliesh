@@ -1,11 +1,11 @@
 package me.jonildev.client.utils
 
-import me.jonildev.client.utils.constants.mc
+import me.jonildev.client.utils.Constants.mc
 import net.minecraft.util.ChatComponentText
 
 object ChatUtils {
 
-    fun messageToChat(text: String) {
+    fun message(text: String) {
         mc.ingameGUI.chatGUI.printChatMessage(ChatComponentText(text))
     }
 }
