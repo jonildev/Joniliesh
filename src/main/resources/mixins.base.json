@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "me.octo.client.mixins",
+  "package": "me.jonildev.client.mixins",
   "refmap": "mixins.base.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.7.11",

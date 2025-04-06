@@ -1,13 +1,18 @@
-[{
-    "modid": "clientbase",
-    "name": "ClientBase",
+[
+  {
+    "modid": "joniliesh",
+    "name": "Joniliesh",
     "description": "Simple kotlin base with mixins",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
-    "authorList": ["Gabagool", "OctoSplash01"],
+    "authorList": [
+      "jonily",
+      "jonildev"
+    ],
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
-}]
+  }
+]
