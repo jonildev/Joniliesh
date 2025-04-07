@@ -42,14 +42,18 @@ class ScanGUI {
         return null
     }
 
+    private var delay = 0;
     @SubscribeEvent
     fun clickanvil(event: ClientTickEvent) {
-        if (!Config.GUIScanner) return
-        val test = getItemByName("Chest")
+        if (!Config.GUIScanner || delay % 4 != 0) return
+        val inventoryName = mc.thePlayer.inventory.displayName.formattedText
+        ChatUtils.message(inventoryName)
+        delay = 0
+        val test = getItemByName("Zombie")
         if (test != null) {
             ChatUtils.message("${test.slot}")
             val slotID = test.slot
-            clickSlot(slotID, 1, 1)
+            clickSlot(slotID, 0, 0)
 
         }
 
